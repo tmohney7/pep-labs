@@ -1,4 +1,4 @@
-
+import org.junit.internal.runners.SuiteMethod;
 
 public class ForLoop {
     /**
@@ -41,9 +41,10 @@ public class ForLoop {
      */
     public String returnNumbers(int start, int end){
         String buildingString = "";
-
-//        code here
-
-        return buildingString;
+        for(int i = start; i<end; i++)
+        buildingString = buildingString + i + " ";
+        {
+            System.out.print(buildingString);
+            return buildingString;
     }
-}
+}}
