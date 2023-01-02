@@ -30,12 +30,16 @@ public class GameService {
         if(guessNumber != secretNumber){
             if(guessNumber == secretNumber){
                 return true;
+            }else{
+                return false;
             }
         }else{
-        }
-        return false;
+            return true;
     }
-}
+}}
+
+
+
 
 
 
