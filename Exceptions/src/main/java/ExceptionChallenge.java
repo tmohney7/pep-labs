@@ -18,6 +18,6 @@ public class ExceptionChallenge {
      */
     public void mustThrow() throws Exception{
         String test = null;
-        test.mustThrow();
+        throw new test.mustThrow();
     }
 }
