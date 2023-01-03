@@ -30,7 +30,11 @@ public class ListExercise {
      * @return a List<Integer> object.
      */
     public List<Integer> createList(){
-        return null;
+        ArrayList<Integer> integers = new ArrayList<Integer>();
+        integers.add(0);
+        integers.add(1);
+        integers.add(2);
+        return integers;
     }
 
     /**
@@ -40,7 +44,11 @@ public class ListExercise {
      * @return the size of List (number of items it holds.)
      */
     public int getSize(List<Integer> list){
-        return 0;
+        ArrayList<Integer> integers = new ArrayList<Integer>();
+        integers.add(0);
+        integers.add(1);
+        integers.add(2);
+        return integers.size();
     }
 
     /**
@@ -52,6 +60,12 @@ public class ListExercise {
      * @return nothing, pass by reference will cause changes to the list object to be reflected across the program.
      */
     public void addToList(List<Integer> list, int value){
+        ArrayList<Integer> integers = new ArrayList<Integer>();
+        integers.add(0);
+        integers.add(1);
+        integers.add(2);
+        integers.add(3);
+
     }
 
     /**
@@ -67,7 +81,8 @@ public class ListExercise {
      * @return the int at the location in 'list' represented by 'index'.
      */
     public int get(List<Integer> list, int index){
-        return 0;
+        int index of Integer;
+        return int;
     }
 
     /**
