@@ -30,11 +30,8 @@ public class ListExercise {
      * @return a List<Integer> object.
      */
     public List<Integer> createList(){
-        ArrayList<Integer> integers = new ArrayList<Integer>();
-        integers.add(0);
-        integers.add(1);
-        integers.add(2);
-        return integers;
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        return list;
     }
 
     /**
@@ -44,11 +41,7 @@ public class ListExercise {
      * @return the size of List (number of items it holds.)
      */
     public int getSize(List<Integer> list){
-        ArrayList<Integer> integers = new ArrayList<Integer>();
-        integers.add(0);
-        integers.add(1);
-        integers.add(2);
-        return integers.size();
+        return list.size();
     }
 
     /**
@@ -60,11 +53,7 @@ public class ListExercise {
      * @return nothing, pass by reference will cause changes to the list object to be reflected across the program.
      */
     public void addToList(List<Integer> list, int value){
-        ArrayList<Integer> integers = new ArrayList<Integer>();
-        integers.add(0);
-        integers.add(1);
-        integers.add(2);
-        integers.add(3);
+        list.add(value);
 
     }
 
@@ -81,8 +70,8 @@ public class ListExercise {
      * @return the int at the location in 'list' represented by 'index'.
      */
     public int get(List<Integer> list, int index){
-        int index of Integer;
-        return int;
+        int element = list.get(index);
+        return element;
     }
 
     /**
@@ -95,6 +84,7 @@ public class ListExercise {
      * @return nothing, pass by reference will cause changes to the list object to be reflected across the program.
      */
     public void removeFromList(List<Integer> list, int position){
+        list.remove(position);
 
     }
 
@@ -108,5 +98,6 @@ public class ListExercise {
      * @return nothing, pass by reference will cause changes to the list object to be reflected across the program.
      */
     public void updateAtPosition(List<Integer> list, int position, int value){
+        list.set(position,value);
     }
 }
