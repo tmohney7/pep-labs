@@ -2,7 +2,11 @@
  * TODO: switch to deque
  */
 
+import java.util.ArrayDeque;
 import java.util.Queue;
+
+import javafx.css.Size;
+import javafx.scene.shape.Polyline;
 
 /**
  * Queues are FIFO - first in, first out, like a checkout line. They are used in algorithms where it is needed to keep
@@ -29,7 +33,8 @@ public class QueueExercise {
      * Stack behavior.
      */
     public Queue<String> createQueue(){
-        return null;
+        Queue<String> queue = new ArrayDeque<String>();
+        return queue;
     }
 
     /**
@@ -38,7 +43,8 @@ public class QueueExercise {
      * @return the length of queue.
      */
     public int getSize(Queue<String> queue){
-        return 0;
+        int size = queue.size();
+        return size;
     }
 
     /**
@@ -48,6 +54,7 @@ public class QueueExercise {
      * @param item a String that should be added to Queue.
      */
     public void addToEndOfQueue(Queue<String> queue, String item){
+        queue.add(item);
 
     }
 
@@ -58,7 +65,8 @@ public class QueueExercise {
      * @return the next String due to be removed (polled) from the Queue<String> (the oldest item in the queue.)
      */
     public String removeFromStartOfQueue(Queue<String> queue){
-        return "";
+        queue.poll();
+        return queue.element();
     }
 
     /**
@@ -67,6 +75,7 @@ public class QueueExercise {
      * @return the next String due to be removed (peeked) from the Queue<String> (the oldest item in the queue.)
      */
     public String getStartOfQueueWithoutRemoving(Queue<String> queue){
-        return "";
+        queue.peek();
+        return queue.element();
     }
 }
