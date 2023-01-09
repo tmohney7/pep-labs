@@ -30,7 +30,7 @@ public class StackExercise {
      * @return the number of elements in the deque.
      */
     public int getSize(Deque<String> stack){
-        int size = getSize();
+        int size = stack.size();
         return size;
     }
 
@@ -50,7 +50,7 @@ public class StackExercise {
      * @return the value popped from the top of the deque.
      */
     public String removeFromTopOfStack(Deque<String> stack){
-        String element = stack.pop();
+        String element = stack.pollLast();
         return element;
     }
     /**
@@ -59,7 +59,7 @@ public class StackExercise {
      * @return the value peeked from the top of the deque.
      */
     public String getTopOfStackWithoutRemoving(Deque<String> stack){
-        String element = stack.peek();
+        String element = stack.peekLast();
         return element;
     }
 }
