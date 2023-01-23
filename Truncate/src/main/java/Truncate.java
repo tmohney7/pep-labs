@@ -31,13 +31,13 @@ public class Truncate {
          * problem2: remove all the records from the table "song"
          */
         String sql = FileUtil.parseSQLFile("problem2.sql");
-
-
+        
 
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
             s.executeUpdate(sql);
+            
 
         } catch (SQLException e) {
             System.out.println("problem2: " + e.getMessage() + '\n');
