@@ -18,6 +18,7 @@ import java.util.List;
 public class GroceryDAO {
 
 
+    private int getAllGroceries;
     /**
      * TODO: Select all of the rows of the Grocery table.
      * You only need to change the sql String, the rest of the method is already complete.
@@ -48,7 +49,7 @@ public class GroceryDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "INSERT INTO grocery VALUES (groceryName)";
+            String sql = "insert into grocery (grocery_name) values ('"+ groceryName +"');";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.executeUpdate();
         }catch(SQLException e){
