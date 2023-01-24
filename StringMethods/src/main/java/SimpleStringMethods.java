@@ -14,8 +14,9 @@ public class SimpleStringMethods {
      * @return the length of string s.
      */
     public int length(String s){
-        int length= length(s);
-        return length;
+        int length= s.length(s);
+        string s = 
+        return s;
     }
 
     /**
