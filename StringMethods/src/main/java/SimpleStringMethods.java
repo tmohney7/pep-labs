@@ -14,7 +14,8 @@ public class SimpleStringMethods {
      * @return the length of string s.
      */
     public int length(String s){
-        return 0;
+        int length= length(s);
+        return length;
     }
 
     /**
@@ -24,7 +25,8 @@ public class SimpleStringMethods {
      * @return the character of String s that is located at position n.
      */
     public char charAt(String s, int n){
-        return ' ';
+        char string = charAt(s, n);
+        return string;
     }
 
     /**
@@ -36,7 +38,8 @@ public class SimpleStringMethods {
      * @return the index of the first occurence of c within s.
      */
     public int indexOf(String s, char c){
-        return 0;
+        int index = indexOf(s, c);
+        return index;
     }
 
 }
