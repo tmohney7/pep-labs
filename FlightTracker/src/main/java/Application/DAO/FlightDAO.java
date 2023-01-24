@@ -28,7 +28,7 @@ public class FlightDAO {
      *
      * @return all flights.
      */
-    public List<Flight> getAllFlights(){
+    public static List<Flight> getAllFlights(){
         Connection connection = ConnectionUtil.getConnection();
         List<Flight> flights = new ArrayList<>();
         try {
@@ -66,10 +66,10 @@ public class FlightDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "change me";
+            String sql = "update flight set departure_city = ?, arrival_city = ? where flight_id = ?;";
             
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
+            preparedStatement.setInt(1,id);
             //write preparedStatement's setString and setInt methods here.
 
             ResultSet rs = preparedStatement.executeQuery();
@@ -108,11 +108,10 @@ public class FlightDAO {
         try {
             //Write SQL logic here. When inserting, you only need to define the departure_city and arrival_city
             //values (two columns total!)
-            String sql = "change me" ;
+            String sql = "insert into flight (departure_city, arrival_city) values (?, ?);" ;
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-
-            //write preparedStatement's setString and setInt methods here.
-
+            preparedStatement.setString(1, flight.departure_city);
+            preparedStatement.setString(2, flight.arrival_city);
 
             preparedStatement.executeUpdate();
             ResultSet pkeyResultSet = preparedStatement.getGeneratedKeys();
@@ -176,14 +175,14 @@ public class FlightDAO {
      * @param arrival_city the arriving city.
      * @return all flights from departure_city to arrival_city.
      */
-    public List<Flight> getAllFlightsFromCityToCity(String departure_city, String arrival_city){
+    public static List<Flight> getAllFlightsFromCityToCity(String departure_city, String arrival_city){
         Connection connection = ConnectionUtil.getConnection();
         List<Flight> flights = new ArrayList<>();
         try {
             //Write SQL logic here
             String sql = "change me";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
+            preparedStatement.setString()
             //write PreparedStatement setString and setInt methods here.
 
 
