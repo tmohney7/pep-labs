@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
+
 /**
  * A DAO is a class that mediates the transformation of data between the format of objects in Java to rows in a
  * database. The methods here are mostly filled out, you will just need to add a SQL statement.
@@ -32,7 +34,7 @@ public class BookDAO {
         List<Book> books = new ArrayList<>();
         try {
             //Write SQL logic here
-            String sql = "change me";
+            String sql = "select * FROM book";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
@@ -57,11 +59,10 @@ public class BookDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "change me";
+            String sql = "select * FROM book WHERE isbn (?);";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            //write preparedStatement's setInt method here.
-
+            preparedStatement.setInt(1, Book.getIsbn());
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
                 Book book = new Book(rs.getInt("isbn"),
@@ -76,6 +77,10 @@ public class BookDAO {
         return null;
     }
 
+    private int isbn() {
+        return 0;
+    }
+
     /**
      * TODO: insert an book into the Book table.
      * Unlike some of the other insert problems, the primary key here will be provided by the client as part of the
@@ -87,11 +92,12 @@ public class BookDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "change me" ;
+            String sql = "insert into book (isbn, authur_id,title,copies_available) VALUES (?,?,?,?)" ;
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
-            //write preparedStatement's setString and setInt methods here.
-
+            preparedStatement.setInt(1,book.getIsbn());
+            preparedStatement.setInt(2, book.getAuthor_id());
+            preparedStatement.setString(3, book.getTitle());
+            preparedStatement.setInt(4, book.getCopies_available());
             preparedStatement.executeUpdate();
             return book;
         }catch(SQLException e){
@@ -109,9 +115,10 @@ public class BookDAO {
         List<Book> books = new ArrayList<>();
         try {
             //Write SQL logic here
-            String sql = "change me";
+            String sql = "select * FROM book WHERE copies_available values (?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
+            preparedStatement.setInt(1, book.getCopies_available());
             //write preparedStatement's setInt method here.
 
             ResultSet rs = preparedStatement.executeQuery();
@@ -126,5 +133,13 @@ public class BookDAO {
             System.out.println(e.getMessage());
         }
         return books;
+    }
+
+    private int getCopies_available() {
+        return 0;
+    }
+
+    public List<Book> getAllAvailableBooks() {
+        return null;
     }
 }
