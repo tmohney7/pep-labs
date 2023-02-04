@@ -59,10 +59,13 @@ public class BookDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "select * FROM book WHERE isbn (?);";
+            String sql = "select * FROM book WHERE isbn = (?);";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
-            preparedStatement.setInt(1, Book.getIsbn());
+            //"select * FROM book WHERE values copies_available > 0";
+            preparedStatement.setInt(1, book.getIsbn());
+            //preparedStatement.setInt(2, author_id());
+            //preparedStatement.setString(3, title());
+            //preparedStatement.setInt(4, copies_available());
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
                 Book book = new Book(rs.getInt("isbn"),
@@ -92,7 +95,7 @@ public class BookDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "insert into book (isbn, authur_id,title,copies_available) VALUES (?,?,?,?)" ;
+            String sql = "insert into book (isbn, authur_id, title, copies_available) VALUES (?,?,?,?)" ;
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1,book.getIsbn());
             preparedStatement.setInt(2, book.getAuthor_id());
@@ -115,10 +118,10 @@ public class BookDAO {
         List<Book> books = new ArrayList<>();
         try {
             //Write SQL logic here
-            String sql = "select * FROM book WHERE copies_available values (?)";
+            String sql = "select * FROM book WHERE values copies_available > 0";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setInt(1, book.getCopies_available());
+            //preparedStatement.setInt(1, books.getCopies_available());
             //write preparedStatement's setInt method here.
 
             ResultSet rs = preparedStatement.executeQuery();
@@ -133,10 +136,6 @@ public class BookDAO {
             System.out.println(e.getMessage());
         }
         return books;
-    }
-
-    private int getCopies_available() {
-        return 0;
     }
 
     public List<Book> getAllAvailableBooks() {

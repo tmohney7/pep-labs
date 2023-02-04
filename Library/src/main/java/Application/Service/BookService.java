@@ -40,6 +40,7 @@ public class BookService {
      * @return all books.
      */
     public List<Book> getAllBooks() {
+        
         return null;
     }
     /**
@@ -64,6 +65,8 @@ public class BookService {
      * @return all available books (bookCount over zero)
      */
     public List<Book> getAllAvailableBooks() {
+        
+        
         return null;
     }
 
