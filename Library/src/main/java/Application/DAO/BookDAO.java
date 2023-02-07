@@ -62,7 +62,7 @@ public class BookDAO {
             String sql = "select * FROM book WHERE isbn = (?);";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             //"select * FROM book WHERE values copies_available > 0";
-            preparedStatement.setInt(1, book.getIsbn());
+            preparedStatement.setInt(1, isbn);
             //preparedStatement.setInt(2, author_id());
             //preparedStatement.setString(3, title());
             //preparedStatement.setInt(4, copies_available());
@@ -95,7 +95,7 @@ public class BookDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "insert into book (isbn, authur_id, title, copies_available) VALUES (?,?,?,?)" ;
+            String sql = "insert into book (isbn, author_id, title, copies_available) VALUES (?,?,?,?)" ;
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1,book.getIsbn());
             preparedStatement.setInt(2, book.getAuthor_id());
