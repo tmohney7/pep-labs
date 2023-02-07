@@ -59,7 +59,7 @@ public class BookService {
      * @return all available books (bookCount over zero)
      */
     public List<Book> getAllAvailableBooks() {
-        return null;
+        return bookDAO.getBooksWithBookCountOverZero();
     }
 
 }
