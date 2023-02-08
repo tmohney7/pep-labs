@@ -1,3 +1,5 @@
+import javafx.scene.chart.PieChart.Data;
+
 /**
  * Official String documentation: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
  */
@@ -11,8 +13,10 @@ public class OtherStringMethods {
      * @return
      */
     public String partOfString(String s, int start, int end){
-        return "";
+        s.substring(start,end);
+            return s;
     }
+    
 
     /**
      * All classes have methods equals and toString because they inherit them from the Object class by extending the
@@ -26,7 +30,8 @@ public class OtherStringMethods {
      * and 0 if s1 is equivalent to s2.
      */
     public int compareLexigraphically(String s1, String s2){
-        return 0;
+        int x = s1.compareTo(s2);
+        return x;
     }
 
     /**
@@ -39,6 +44,7 @@ public class OtherStringMethods {
      * @return an array of Strings that represent s1 split by splitAround.
      */
     public String[] splitStringIntoMultipleStrings(String s1, String splitAround){
-        return null;
+        String[] arrOfStr = s1.split(splitAround);
+        return arrOfStr;
     }
 }
