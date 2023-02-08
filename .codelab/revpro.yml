@@ -40,12 +40,12 @@
     :git_user_name: tmohney7
 :progress:
   :count_labs_total: 96
-  :count_labs_passed: 0
+  :count_labs_passed: 1
   :count_tests_total: 361
-  :count_tests_passed: 11
+  :count_tests_passed: 12
 :progress_test:
   :count_tests_total: 361
-  :count_tests_passed: 11
+  :count_tests_passed: 12
   Start:
     :Week: 1
     :Order: 1
@@ -836,7 +836,7 @@
     :Order: 1
     :Type: lab
     :count_tests: 12
-    :count_tests_passed: 11
+    :count_tests_passed: 12
     :tests:
       returnNotBothTest1: 1
       returnNotBothTest2: 1
@@ -849,7 +849,7 @@
       returnNeitherNorTest1: 1
       returnNeitherNorTest2: 1
       returnNeitherNorTest3: 1
-      returnNeitherNorTest4: 0
+      returnNeitherNorTest4: 1
       AdvancedBooleanLogicTest: 0
   OtherStringMethods:
     :Week: 7
