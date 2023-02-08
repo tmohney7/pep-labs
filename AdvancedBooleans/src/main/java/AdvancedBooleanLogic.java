@@ -17,9 +17,9 @@ public class AdvancedBooleanLogic {
      */
     public boolean returnNotBoth(boolean b1, boolean b2){
         if (b1 && b2){
-            return true;
-        }else{
             return false;
+        }else{
+            return true;
     }
 }
     /**
@@ -29,12 +29,10 @@ public class AdvancedBooleanLogic {
      * @return true if either b1 or b2 is true, but false if they are both true or both false.
      */
     public boolean returnExclusiveOr(boolean b1, boolean b2){
-        if (b1 || b2 ){
-            return true;
+        boolean b3 = (b1 || b2 ) && (b1 != b2);
+            return b3;
         }   
-            return false;
-    }
-
+    
     /**
      * Neither b1 NOR b2
      * @param b1 first boolean to be compared.
@@ -42,9 +40,8 @@ public class AdvancedBooleanLogic {
      * @return true if neither b1 nor b2 are true. Return false if either b1 or b2 is true.
      */
     public boolean returnNeitherNor(boolean b1, boolean b2){
-        if (b1 != b2){
-            return true;
-        }
-            return false;
+        boolean b3 = (b1 == b2) && (b2 ^ b1);
+            return b3;
     }
-}
+    }
+   // (b1 != b2) && (b2 == b1) && 
