@@ -1,3 +1,7 @@
+import java.lang.annotation.Target;
+import java.lang.reflect.Array;
+
+import com.fasterxml.jackson.annotation.JacksonInject.Value;
 
 public class ArrayAbsoluteValue {
     /**
@@ -9,11 +13,9 @@ public class ArrayAbsoluteValue {
      * @return the absolute value array of nums.
      */
     public int[] getArrayAbs(int[] nums){
-        for( int i = 0; i < nums.length; i++){
-                Math.abs(nums[i]);
-        }
+                for( int i = 0; i < nums.length; i++){
+                nums[i] = Math.abs(nums[i]);
+        }        
         return nums;
         }
 }
-
-
